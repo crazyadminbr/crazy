@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protect Bot</title>
+    <link rel="stylesheet" href="./stylesdev.css">
+</head>
+<body>
+    <!-- Шапка -->
+    <header>
+        <div class="logo">
+            <img src="./protectlogo.png" alt="Protect Bot Logo">
+        </div>
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="./index.html">ГЛАВНАЯ</a></li>
+                <li><a href="./bots.html">БОТЫ</a></li>
+                <li><a href="./resurse.html">РЕСУРСЫ</a></li>
+                <li><a href="./command.html">КОМАНДЫ</a></li>
+                <li class="active"><a href="./dev.html">DEV</a></li>
+                <li><a href="./tarif.html">ТАРИФЫ</a></li>
+                <li class="login-menu-item"><a href="#">Личный кабинет</a></li>
+            </ul>
+        </nav>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <button class="login-btn">
+            <img src="user-icon.png" alt="." class="login-icon">
+            <span class="login-text">Личный кабинет</span>
+        </button>
+    </header>
+
+    <!-- Секция с новостями -->
+    <section class="news">
+        <div class="news-container">
+            <h2>Новости разработки</h2>
+            <div class="news-item">
+                <h3>Добавлена новая команда /startgame</h3>
+                <p class="news-date">26 марта 2025</p>
+                <p>Мы добавили новую игровую команду /startgame! Теперь вы можете играть в "Угадай слово" прямо в чате. Ведущий загадывает слово, а участники пытаются его угадать за 5 минут. Победитель получает 50 🐾 Lapki Coin!</p>
+                <img src="#" alt="Game Update Image" class="news-image">
+            </div>
+            <div class="news-item">
+                <h3>Обновление системы экономики</h3>
+                <p class="news-date">20 марта 2025</p>
+                <p>Система экономики стала ещё интереснее! Теперь с помощью команды /duel вы можете вызывать других пользователей на дуэль и выигрывать 🐾 Lapki Coin. Минимальная ставка — 150 🐾, а победитель определяется случайным образом.</p>
+                <img src="#" alt="Economy Update Image" class="news-image">
+            </div>
+            <div class="news-item">
+                <h3>Улучшение модерации</h3>
+                <p class="news-date">15 марта 2025</p>
+                <p>Мы улучшили команды модерации: /mute, /ban и /warn теперь работают быстрее и точнее. Также добавлена команда /report, чтобы пользователи могли отправлять жалобы администрации чата.</p>
+                <img src="#" alt="Moderation Update Image" class="news-image">
+            </div>
+        </div>
+    </section>
+
+    <!-- JavaScript для управления гамбургер-меню -->
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+    </script>
+    <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9268ef0efe49c428',t:'MTc0MzAxNjA3Ni4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
+</body>
+</html>
