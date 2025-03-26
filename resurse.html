@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protect Bot</title>
+    <link rel="stylesheet" href="./tarif.css">
+</head>
+<body>
+    <!-- Шапка -->
+    <header>
+        <div class="logo">
+            <img src="./protectlogo.png" alt="Protect Bot Logo">
+        </div>
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="./index.html">ГЛАВНАЯ</a></li>
+                <li><a href="./bots.html">БОТЫ</a></li>
+                <li class="active"><a href="./resurse.html">РЕСУРСЫ</a></li>
+                <li><a href="./command.html">КОМАНДЫ</a></li>
+                <li><a href="./dev.html">DEV</a></li>
+                <li><a href="./tarif.html">ТАРИФЫ</a></li>
+                <li class="login-menu-item"><a href="#">Личный кабинет</a></li>
+            </ul>
+        </nav>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <button class="login-btn">
+            <img src="user-icon.png" alt="." class="login-icon">
+            <span class="login-text">Личный кабинет</span>
+        </button>
+    </header>
+
+    <!-- Секция "Раздел в разработке" -->
+    <section class="under-development">
+        <div class="under-development-container">
+            <h2>Раздел находится в разработке</h2>
+            <p>Мы работаем над этим разделом, чтобы сделать его максимально полезным для вас. Скоро здесь появится новая информация!</p>
+        </div>
+    </section>
+
+    <!-- JavaScript для управления гамбургер-меню -->
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+    </script>
+    <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9268f7aa9ebeb3ef',t:'MTc0MzAxNjQyOS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
+</body>
+</html>
