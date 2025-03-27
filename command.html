@@ -90,7 +90,8 @@
                     <p><strong>Где работает:</strong> Только в группах.</p>
                 </div>
                 <div class="command-item">
-                    <h3>/unsetrole [user] Роль</h3>
+                    <h3>/unsetrole [user]</h3>
+                    <h3>-роль [user] </h3>
                     <p><strong>Описание:</strong> Убирает роль у пользователя.</p>
                     <p><strong>Как работает:</strong> Удаляет запись из Роли Пользователей.</p>
                     <p><strong>Пример:</strong> /unsetrole @GiveMyOscar Модератор.</p>
@@ -105,6 +106,7 @@
                 </div>
                 <div class="command-item">
                     <h3>/ban 1d Причина</h3>
+                    <h3>+бан 1d Причина</h3>
                     <p><strong>Описание:</strong> Банит пользователя в ответ на его сообщение.</p>
                     <p><strong>Как работает:</strong> Добавляет запись в таблицу Баны с временем окончания (1d = 1 день).</p>
                     <p><strong>Пример:</strong> /ban 1d Реклама.</p>
@@ -112,6 +114,7 @@
                 </div>
                 <div class="command-item">
                     <h3>/unban [user]</h3>
+                    <h3>-бан [user] </h3>
                     <p><strong>Описание:</strong> Разбанивает пользователя.</p>
                     <p><strong>Как работает:</strong> Удаляет запись из bans.</p>
                     <p><strong>Пример:</strong> /unban @GiveMyOscar.</p>
@@ -126,6 +129,7 @@
                 </div>
                 <div class="command-item">
                     <h3>/unmute [user]</h3>
+                    <h3>-мут [user] </h3>
                     <p><strong>Описание:</strong> Снимает мут с пользователя.</p>
                     <p><strong>Как работает:</strong> Удаляет запись из Муты или снимает ограничения через API.</p>
                     <p><strong>Пример:</strong> /unmute @GiveMyOscar/p>
@@ -133,38 +137,44 @@
                 </div>
                 <div class="command-item">
                     <h3>/banlist</h3>
+                    <h3>баны</h3>
                     <p><strong>Описание:</strong> Показывает список забаненных пользователей.</p>
                     <p><strong>Как работает:</strong> Запрашивает данные из таблицы Баны.</p>
                     <p><strong>Где работает:</strong> Только в группах.</p>
                 </div>
                 <div class="command-item">
                     <h3>/mutelist</h3>
+                    <h3>муты</h3>
                     <p><strong>Описание:</strong> Показывает список замьюченных пользователей.</p>
                     <p><strong>Как работает:</strong> Запрашивает данные из таблицы Муты.</p>
                     <p><strong>Где работает:</strong> Только в группах.</p>
                 </div>
                 <div class="command-item">
-                    <h3>/warn [@user] Причина</h3>
+                    <h3>/warn  Причина</h3>
+                    <h3>+варн Причина</h3>
                     <p><strong>Описание:</strong> Выдаёт предупреждение пользователю (3 предупреждения = бан на 10 дней).</p>
                     <p><strong>Как работает:</strong> Добавляет запись в Варны. При достижении 3 — бан в Баны.</p>
-                    <p><strong>Пример:</strong> /warn @GiveMyOscar Флуд.</p>
+                    <p><strong>Пример:</strong> /warn В ответ на сообщение Флуд.</p>
                     <p><strong>Где работает:</strong> Только в группах.</p>
                 </div>
                 <div class="command-item">
-                    <h3>/unwarn [@user]</h3>
+                    <h3>/unwarn ID</h3>
+                    <h3>-варн ID</h3>
                     <p><strong>Описание:</strong> Снимает одно предупреждение у пользователя.</p>
                     <p><strong>Как работает:</strong> Удаляет последнюю запись из Варны.</p>
-                    <p><strong>Пример:</strong> /unwarn @GiveMyOscar.</p>
+                    <p><strong>Пример:</strong> /unwarn В ответ на сообщение.</p>
                     <p><strong>Где работает:</strong> Только в группах.</p>
                 </div>
                 <div class="command-item">
                     <h3>/warnlist</h3>
+                    <h3>варны</h3>
                     <p><strong>Описание:</strong> Показывает список пользователей с предупреждениями.</p>
                     <p><strong>Как работает:</strong> Запрашивает данные из Варны.</p>
                     <p><strong>Где работает:</strong> Только в группах.</p>
                 </div>
                 <div class="command-item">
                     <h3>/clear</h3>
+                    <h3>-чат</h3>
                     <p><strong>Описание:</strong> Удаляет последние 100 сообщений пользователя в ответ на его сообщение.</p>
                     <p><strong>Как работает:</strong> Удаляет записи из История сообщений и сообщения через API.</p>
                     <p><strong>Пример:</strong> Ответ на сообщение → /clear.</p>
@@ -228,6 +238,7 @@
                 <h2>Команды статистики и активности</h2>
                 <div class="command-item">
                     <h3>/stats</h3>
+                    <h3>+стата</h3>
                     <p><strong>Описание:</strong> Показывает статистику пользователя (свою или в ответ на сообщение).</p>
                     <p><strong>Как работает:</strong> Запрашивает данные из Статистика Пользователя (количество сообщений, дата входа и т.д.).</p>
                     <p><strong>Пример:</strong> Ответ на сообщение → /stats.</p>
@@ -241,6 +252,7 @@
                 </div>
             </div>
 
+    
             <!-- Команды экономики -->
             <div class="command-category">
                 <h2>Команды экономики</h2>
