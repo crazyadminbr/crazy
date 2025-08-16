@@ -3,11 +3,212 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Protect Bot</title>
-    <link rel="stylesheet" href="./stylesb.css">
+    <title>Protect Bot - Команды</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #0a1a2f, #1c2b4a);
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        /* Шапка */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background: rgba(0, 0, 0, 0.5);
+            position: relative;
+        }
+        .logo img {
+            height: 40px;
+        }
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 20px;
+            cursor: pointer;
+        }
+        .hamburger span {
+            width: 100%;
+            height: 3px;
+            background: white;
+            transition: all 0.3s ease;
+        }
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+        .nav-menu {
+            transition: all 0.3s ease;
+        }
+        .nav-menu ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            margin: 0;
+            padding: 0;
+        }
+        .nav-menu ul li a {
+            color: #b0b0b0;
+            text-decoration: none;
+            font-size: 1em;
+            transition: color 0.3s;
+        }
+        .nav-menu ul li a:hover {
+            color: white;
+        }
+        .nav-menu ul li.active a {
+            color: #1a73e8;
+            font-weight: bold;
+        }
+        .login-menu-item {
+            display: none;
+        }
+        .login-btn {
+            display: flex;
+            align-items: center;
+            background: linear-gradient(90deg, #1a73e8, #4a90e2);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            color: white;
+            font-size: 1em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .login-btn.active {
+            background: linear-gradient(90deg, #4a90e2, #1a73e8);
+        }
+        /* FAQ */
+        .faq-container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0;
+        }
+        .faq-container h1 {
+            text-align: center;
+            color: #1a73e8;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+        }
+        .faq-list {
+            list-style: none;
+        }
+        .faq-item {
+            margin-bottom: 25px;
+        }
+        .faq-question {
+            padding: 15px 20px;
+            font-size: 1.3em;
+            color: #1a73e8;
+            cursor: pointer;
+            background: #0d1b2a;
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s ease;
+        }
+        .faq-question:hover {
+            background: #1a2f4a;
+        }
+        .faq-question::after {
+            content: '➕';
+            font-size: 1.2em;
+            transition: transform 0.3s ease;
+        }
+        .faq-item.active .faq-question::after {
+            content: '➖';
+        }
+        .faq-answer {
+            padding: 0 20px 15px;
+            color: #b0b0b0;
+            font-size: 1.1em;
+            line-height: 1.6;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+            background: #0d1b2a;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+        .faq-item.active .faq-answer {
+            max-height: 150px;
+            padding: 15px 20px;
+        }
+        @media (max-width: 768px) {
+            header {
+                flex-wrap: wrap;
+                gap: 10px;
+                padding: 20px;
+                justify-content: space-between;
+            }
+            .logo {
+                order: 1;
+            }
+            .nav-menu {
+                display: none;
+                width: 100%;
+                position: absolute;
+                top: 80px;
+                left: 0;
+                background: rgba(0, 0, 0, 0.9);
+                padding: 20px 0;
+                order: 3;
+            }
+            .nav-menu.active {
+                display: block;
+            }
+            .nav-menu ul {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+            .nav-menu ul li a {
+                font-size: 1.2em;
+            }
+            .login-menu-item {
+                display: block;
+            }
+            .login-menu-item a {
+                color: #1a73e8 !important;
+            }
+            .hamburger {
+                display: flex;
+                order: 2;
+            }
+            .login-btn {
+                display: none;
+            }
+            .faq-container {
+                width: 95%;
+            }
+            .faq-question {
+                font-size: 1.1em;
+            }
+            .faq-answer {
+                font-size: 1em;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- Шапка -->
     <header>
         <div class="logo">
             <img src="./protectlogo.png" alt="Protect Bot Logo">
@@ -33,139 +234,54 @@
             <span class="login-text">Личный кабинет</span>
         </button>
     </header>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: 'Segoe UI', Arial, sans-serif;
-            background: linear-gradient(135deg, #0a1a2f, #1c2b4a);
-            color: #fff;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            padding: 20px 0;
-        }
-        .faq-container {
-            width: 90%;
-            max-width: 1200px;
-            background: rgba(13, 27, 42, 0.95);
-            border-radius: 20px;
-            padding: 40px;
-            box-shadow: 0 0 30px rgba(0, 196, 255, 0.4);
-            backdrop-filter: blur(5px);
-        }
-        .faq-container h1 {
-            text-align: center;
-            color: #00c4ff;
-            font-size: 2.5em;
-            margin-bottom: 30px;
-        }
-        .faq-list {
-            list-style: none;
-        }
-        .faq-item {
-            margin-bottom: 25px; /* Мини-промежуток между статьями */
-            background: #0d1b2a;
-            border-left: 4px solid #00c4ff;
-            border-radius: 10px;
-            overflow: hidden;
-            transition: all 0.3s ease;
-        }
-        .faq-item:hover {
-            border-left-color: #ff6b6b;
-            transform: translateX(5px);
-        }
-        .faq-question {
-            padding: 15px 20px;
-            font-size: 1.3em;
-            color: #00c4ff;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .faq-question::after {
-            content: '➕';
-            font-size: 1.2em;
-            transition: transform 0.3s ease;
-        }
-        .faq-item.active .faq-question::after {
-            content: '➖';
-        }
-        .faq-answer {
-            padding: 0 20px 15px;
-            color: #b0b0b0;
-            font-size: 1.1em;
-            line-height: 1.6;
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.4s ease, padding 0.4s ease;
-        }
-        .faq-item.active .faq-answer {
-            max-height: 150px; /* Чуть скрыть содержимое */
-            padding: 15px 20px;
-        }
-        @media (max-width: 768px) {
-            .faq-container {
-                width: 95%;
-                padding: 20px;
-            }
-            .faq-question {
-                font-size: 1.1em;
-            }
-            .faq-answer {
-                font-size: 1em;
-            }
-        }
-    </style>
-</head>
-<body>
+
     <div class="faq-container">
-        <h1>Часто Задаваемые Вопросы</h1>
+        <h1>Часто Задаваемые Вопросы о Командах</h1>
         <ul class="faq-list">
             <li class="faq-item">
-                <div class="faq-question">Как начать использовать Protect Bot?</div>
-                <div class="faq-answer">Добавьте бота в свой чат с помощью команды /start и настройте его права администратора.</div>
+                <div class="faq-question">Как начать с /start?</div>
+                <div class="faq-answer">Введите /start в чате, чтобы активировать бота и начать настройку.</div>
             </li>
             <li class="faq-item">
-                <div class="faq-question">Какие команды доступны?</div>
-                <div class="faq-answer">Основные команды: /help (помощь), /settings (настройки), /support (поддержка).</div>
+                <div class="faq-question">Что делает /help?</div>
+                <div class="faq-answer">Команда /help показывает список всех доступных команд и инструкций.</div>
             </li>
             <li class="faq-item">
-                <div class="faq-question">Как добавить бота в чат?</div>
-                <div class="faq-answer">Нажмите "Пригласить" на сайте, выберите чат и предоставьте боту права администратора.</div>
+                <div class="faq-question">Как настроить с /settings?</div>
+                <div class="faq-answer">Используйте /settings для изменения параметров, таких как уведомления.</div>
             </li>
             <li class="faq-item">
-                <div class="faq-question">Что делать, если возникла ошибка?</div>
-                <div class="faq-answer">Используйте /support для обращения в поддержку или проверьте настройки чата.</div>
+                <div class="faq-question">Что такое /support?</div>
+                <div class="faq-answer">Команда /support позволяет связаться с поддержкой при проблемах.</div>
             </li>
             <li class="faq-item">
-                <div class="faq-question">Можно ли настроить уведомления?</div>
-                <div class="faq-answer">Да, настройте уведомления через /settings, выбрав нужные параметры.</div>
-            </li>
-            <li class="faq-item">
-                <div class="faq-question">Как обновить бота?</div>
-                <div class="faq-answer">Обновления происходят автоматически, но проверьте /version для актуальной версии.</div>
-            </li>
-            <li class="faq-item">
-                <div class="faq-question">Поддерживает ли бот другие платформы?</div>
-                <div class="faq-answer">На данный момент поддерживаются Telegram, VK и Discord.</div>
+                <div class="faq-question">Как узнать версию с /version?</div>
+                <div class="faq-answer">Введите /version, чтобы проверить текущую версию бота.</div>
             </li>
         </ul>
     </div>
+
     <script>
         const faqItems = document.querySelectorAll('.faq-item');
         faqItems.forEach(item => {
             item.addEventListener('click', () => {
+                // Закрываем все остальные элементы
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+                // Переключаем текущий элемент
                 item.classList.toggle('active');
             });
+        });
+
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            hamburger.classList.toggle('active');
         });
     </script>
 </body>
 </html>
-
-
