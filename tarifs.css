@@ -1,54 +1,59 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Segoe UI', Arial, sans-serif;
+    font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
     background: linear-gradient(135deg, #0a1a2f 0%, #1c2b4a 100%);
     color: white;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    line-height: 1.6;
 }
 
-/* Шапка */
+/* Header */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 50px;
-    background: rgba(0, 0, 0, 0.6);
-    position: relative;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    padding: 25px 60px;
+    background: rgba(0, 0, 0, 0.7);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
 }
 
 .logo img {
-    height: 50px;
-    transition: transform 0.3s ease;
+    height: 60px;
+    transition: transform 0.3s ease, filter 0.3s ease;
 }
 
 .logo img:hover {
-    transform: scale(1.1);
+    transform: scale(1.15);
+    filter: brightness(1.2);
 }
 
-/* Гамбургер-меню */
+/* Hamburger Menu */
 .hamburger {
     display: none;
     flex-direction: column;
     justify-content: space-between;
-    width: 35px;
-    height: 25px;
+    width: 40px;
+    height: 28px;
     cursor: pointer;
 }
 
 .hamburger span {
     width: 100%;
-    height: 4px;
+    height: 5px;
     background: #1a73e8;
-    border-radius: 2px;
+    border-radius: 3px;
     transition: all 0.3s ease;
 }
 
 .hamburger.active span:nth-child(1) {
-    transform: rotate(45deg) translate(6px, 6px);
+    transform: rotate(45deg) translate(7px, 7px);
 }
 
 .hamburger.active span:nth-child(2) {
@@ -56,138 +61,132 @@ header {
 }
 
 .hamburger.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(8px, -8px);
+    transform: rotate(-45deg) translate(9px, -9px);
 }
 
-/* Навигация */
-.nav-menu {
-    transition: all 0.3s ease;
-}
-
+/* Navigation */
 .nav-menu ul {
     list-style: none;
     display: flex;
-    gap: 25px;
+    gap: 30px;
     margin: 0;
     padding: 0;
 }
 
 .nav-menu ul li a {
-    color: #b0b0b0;
+    color: #c0c0c0;
     text-decoration: none;
-    font-size: 1.1em;
-    font-weight: 500;
-    transition: color 0.3s, text-shadow 0.3s;
+    font-size: 1.2em;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
 .nav-menu ul li a:hover {
     color: #1a73e8;
-    text-shadow: 0 0 8px rgba(26, 115, 232, 0.5);
+    text-shadow: 0 0 10px rgba(26, 115, 232, 0.7);
 }
 
-/* Подсветка активного пункта */
 .nav-menu ul li.active a {
     color: #1a73e8;
-    font-weight: bold;
-    text-shadow: 0 0 5px rgba(26, 115, 232, 0.7);
+    font-weight: 700;
+    text-shadow: 0 0 8px rgba(26, 115, 232, 0.8);
 }
 
-/* Скрываем пункт "Личный кабинет" в меню на больших экранах */
+/* Hide login menu item on desktop */
 .login-menu-item {
     display: none;
 }
 
-/* Кнопка "Личный кабинет" */
+/* Login Button */
 .login-btn {
     display: flex;
     align-items: center;
     background: linear-gradient(90deg, #1a73e8, #4a90e2);
     border: none;
-    padding: 12px 24px;
-    border-radius: 25px;
+    padding: 14px 28px;
+    border-radius: 50px;
     color: white;
-    font-size: 1.1em;
-    font-weight: 500;
+    font-size: 1.2em;
+    font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 2px 8px rgba(26, 115, 232, 0.4);
+    box-shadow: 0 3px 10px rgba(26, 115, 232, 0.5);
 }
 
 .login-btn:hover {
     background: linear-gradient(90deg, #4a90e2, #1a73e8);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(26, 115, 232, 0.6);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(26, 115, 232, 0.7);
 }
 
-.login-btn.active {
-    background: linear-gradient(90deg, #4a90e2, #1a73e8);
+.login-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 3px 10px rgba(26, 115, 232, 0.5);
 }
 
 .login-icon {
-    width: 22px;
-    height: 22px;
-    margin-right: 10px;
+    width: 24px;
+    height: 24px;
+    margin-right: 12px;
 }
 
 .login-text {
     display: inline;
 }
 
-/* Секция со списком чатов */
+/* Chat List Section */
 .chat-list {
     flex: 1;
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    padding: 40px 20px;
+    padding: 50px 20px;
 }
 
 .chat-list-container {
     width: 100%;
-    max-width: 1200px;
-    padding: 30px;
+    max-width: 1400px;
+    padding: 40px;
 }
 
 .chat-list-container h2 {
-    font-size: 2.8em;
+    font-size: 3.2em;
     color: #1a73e8;
-    margin: 0 0 40px;
-    text-shadow: 0 0 12px rgba(26, 115, 232, 0.6);
-    font-weight: 700;
+    margin: 0 0 50px;
+    text-shadow: 0 0 15px rgba(26, 115, 232, 0.7);
+    font-weight: 800;
     text-align: center;
-    letter-spacing: 1px;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
 }
 
 .chat-list-items {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
     justify-items: center;
 }
 
 .chat-item {
-    background: linear-gradient(145deg, rgba(30, 40, 60, 0.9), rgba(20, 30, 50, 0.7));
-    border-radius: 12px;
-    padding: 25px;
+    background: linear-gradient(145deg, rgba(30, 40, 60, 0.95), rgba(20, 30, 50, 0.85));
+    border-radius: 16px;
+    padding: 30px;
     text-decoration: none;
     color: inherit;
-    transition: all 0.3s ease;
+    transition: all 0.4s ease;
     width: 100%;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
     position: relative;
     overflow: hidden;
-    border: 1px solid rgba(26, 115, 232, 0.2);
+    border: 2px solid rgba(26, 115, 232, 0.3);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 
-/* Optional: Add background image via data attribute or specific class */
-.chat-item[data-background] {
-    background-image: url(attr(data-background));
-}
-
-/* Example background images for chat items (replace with actual image URLs) */
+/* Background images for chat items */
 .chat-item:nth-child(1) {
     background-image: url('');
 }
@@ -227,13 +226,13 @@ header {
 }
 
 .chat-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(26, 115, 232, 0.5);
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 10px 25px rgba(26, 115, 232, 0.6);
 }
 
 .chat-item:active {
     transform: translateY(0);
-    box-shadow: 0 4px 10px rgba(26, 115, 232, 0.3);
+    box-shadow: 0 4px 12px rgba(26, 115, 232, 0.3);
 }
 
 .chat-item h3,
@@ -243,25 +242,25 @@ header {
 }
 
 .chat-item h3 {
-    font-size: 1.7em;
-    margin: 0 0 10px;
+    font-size: 1.8em;
+    margin: 0 0 12px;
     color: #ffffff;
-    font-weight: 600;
-    letter-spacing: 0.5px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
 }
 
 .chat-item p {
-    font-size: 1.1em;
-    color: #d0d0d0;
+    font-size: 1.2em;
+    color: #d8d8d8;
     margin: 0;
-    line-height: 1.4;
+    line-height: 1.5;
 }
 
-/* Анимация появления */
+/* Fade-in animation */
 @keyframes fadeIn {
     0% {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(25px);
     }
     100% {
         opacity: 1;
@@ -270,11 +269,11 @@ header {
 }
 
 .chat-item {
-    animation: fadeIn 0.6s ease-in-out forwards;
-    animation-delay: calc(var(--index) * 0.1s);
+    animation: fadeIn 0.7s ease-out forwards;
+    animation-delay: calc(var(--index) * 0.15s);
 }
 
-/* Адаптивность */
+/* Responsive design */
 @media (max-width: 768px) {
     header {
         flex-wrap: wrap;
