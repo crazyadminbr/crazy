@@ -177,6 +177,37 @@ header {
     position: relative;
     overflow: hidden;
     border: 1px solid rgba(26, 115, 232, 0.2);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Optional: Add background image via data attribute or specific class */
+.chat-item[data-background] {
+    background-image: url(attr(data-background));
+}
+
+/* Example background images for chat items (replace with actual image URLs) */
+.chat-item:nth-child(1) {
+    background-image: url('https://example.com/chat1-banner.jpg');
+}
+.chat-item:nth-child(2) {
+    background-image: url('https://example.com/chat2-banner.jpg');
+}
+.chat-item:nth-child(3) {
+    background-image: url('https://example.com/chat3-banner.jpg');
+}
+
+/* Overlay to ensure text readability */
+.chat-item::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(145deg, rgba(30, 40, 60, 0.7), rgba(20, 30, 50, 0.5));
+    z-index: 0;
 }
 
 .chat-item::before {
@@ -188,6 +219,7 @@ header {
     height: 100%;
     background: linear-gradient(90deg, transparent, rgba(26, 115, 232, 0.4), transparent);
     transition: left 0.5s ease;
+    z-index: 1;
 }
 
 .chat-item:hover::before {
@@ -197,12 +229,17 @@ header {
 .chat-item:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 20px rgba(26, 115, 232, 0.5);
-    background: linear-gradient(145deg, rgba(40, 50, 70, 0.9), rgba(30, 40, 60, 0.7));
 }
 
 .chat-item:active {
     transform: translateY(0);
     box-shadow: 0 4px 10px rgba(26, 115, 232, 0.3);
+}
+
+.chat-item h3,
+.chat-item p {
+    position: relative;
+    z-index: 2;
 }
 
 .chat-item h3 {
