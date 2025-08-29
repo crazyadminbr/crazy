@@ -164,7 +164,7 @@ header {
 
 .chat-list-items {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: 1fr; /* Changed to single column for full-width items */
     gap: 30px;
     justify-items: center;
 }
