@@ -14,7 +14,7 @@
         </div>
         <nav class="nav-menu">
             <ul>
-                <li class="active"><a href="#">ГЛАВНАЯ</a></li>
+                <li class="active"><a href="#">ГЛАВНАЯ</a></li> <!-- Добавляем класс active -->
                 <li><a href="./bots.html">БОТЫ</a></li>
                 <li><a href="./resurse.html">РЕСУРСЫ</a></li>
                 <li><a href="./faq.html">КОМАНДЫ</a></li>
@@ -37,13 +37,13 @@
     <!-- Основная секция -->
     <section class="hero">
         <div class="hero-content">
-            <h1>LAPKI MANAGER – ваш надежный помощник в управлении чатом!</h1>
+            <h1>LAPKI MANAGER – ваш надежный помощник в управлении чатом! </h1>
             <p>🔒 Защитите свой чат 24/7 – доверьтесь ProtectBot!</p>
             <div class="buttons">
                 <button class="connect-btn">Подключиться</button>
                 <button class="setup-btn">Как настроить</button>
             </div>
-        </div>
+        </div><br><br>
         <div class="hero-image">
             <img src="bot-image.png" alt="Protect Bot Interface">
             <button class="why-btn">Почему LAPKI MANAGER?</button>
@@ -75,25 +75,8 @@
         const navMenu = document.querySelector('.nav-menu');
 
         hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
             navMenu.classList.toggle('active');
-        });
-
-        // Закрытие меню при клике на ссылку
-        const navLinks = document.querySelectorAll('.nav-menu ul li a');
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                hamburger.classList.remove('active');
-                navMenu.classList.remove('active');
-            });
-        });
-
-        // Закрытие меню при клике вне меню
-        document.addEventListener('click', (event) => {
-            if (!navMenu.contains(event.target) && !hamburger.contains(event.target)) {
-                hamburger.classList.remove('active');
-                navMenu.classList.remove('active');
-            }
+            hamburger.classList.toggle('active');
         });
     </script>
 </body>
