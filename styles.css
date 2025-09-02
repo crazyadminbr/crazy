@@ -34,30 +34,34 @@ header {
     width: 30px;
     height: 20px;
     cursor: pointer;
+    position: relative;
+    z-index: 100;
 }
 
 .hamburger span {
     width: 100%;
     height: 3px;
     background: #ff0000;
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transform-origin: center;
 }
 
 .hamburger.active span:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
+    transform: rotate(45deg) translate(6px, 6px);
 }
 
 .hamburger.active span:nth-child(2) {
     opacity: 0;
+    transform: translateX(-20px);
 }
 
 .hamburger.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(7px, -7px);
+    transform: rotate(-45deg) translate(6px, -6px);
 }
 
 /* Навигация */
 .nav-menu {
-    transition: all 0.3s ease;
+    transition: all 0.5s ease;
 }
 
 .nav-menu ul {
@@ -67,6 +71,24 @@ header {
     margin: 0;
     padding: 0;
 }
+
+.nav-menu ul li {
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: all 0.3s ease;
+}
+
+.nav-menu.active ul li {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.nav-menu.active ul li:nth-child(1) { transition-delay: 0.1s; }
+.nav-menu.active ul li:nth-child(2) { transition-delay: 0.2s; }
+.nav-menu.active ul li:nth-child(3) { transition-delay: 0.3s; }
+.nav-menu.active ul li:nth-child(4) { transition-delay: 0.4s; }
+.nav-menu.active ul li:nth-child(5) { transition-delay: 0.5s; }
+.nav-menu.active ul li:nth-child(6) { transition-delay: 0.6s; }
 
 .nav-menu ul li a {
     color: #cccccc;
@@ -306,16 +328,31 @@ footer h2 {
         padding: 20px 0;
         order: 3;
         box-shadow: 0 0 15px rgba(255, 0, 0, 0.3);
+        transform: translateY(-100%);
+        transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55), opacity 0.5s ease;
+        opacity: 0;
     }
 
     .nav-menu.active {
         display: block;
+        transform: translateY(0);
+        opacity: 1;
     }
 
     .nav-menu ul {
         flex-direction: column;
         gap: 20px;
         text-align: center;
+    }
+
+    .nav-menu ul li {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+
+    .nav-menu.active ul li {
+        opacity: 1;
+        transform: translateX(0);
     }
 
     .nav-menu ul li a {
