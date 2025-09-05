@@ -53,16 +53,8 @@ header {
 }
 
 /* Навигация */
-
 .nav-menu {
-    display: none;
-    width: 100%;
-    position: absolute;
-    top: 80px;
-    left: 0;
-    background: rgba(0, 0, 0, 0.9);
-    padding: 20px 0;
-    order: 3;
+    transition: all 0.3s ease;
 }
 
 .nav-menu ul {
@@ -358,5 +350,3 @@ footer h2 {
         border-width: 1px;
     }
 }
-
-
