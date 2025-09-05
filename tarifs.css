@@ -2,8 +2,8 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
-    background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
-    color: #ffffff;
+    background: linear-gradient(135deg, #0a1a2f 0%, #1c2b4a 100%);
+    color: white;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -16,23 +16,22 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 25px 60px;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.7);
     position: sticky;
     top: 0;
     z-index: 100;
-    box-shadow: 0 4px 12px rgba(255, 0, 0, 0.3);
-    backdrop-filter: blur(12px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
 }
 
 .logo img {
     height: 60px;
     transition: transform 0.3s ease, filter 0.3s ease;
-    filter: drop-shadow(0 0 8px rgba(255, 0, 0, 0.5));
 }
 
 .logo img:hover {
     transform: scale(1.15);
-    filter: brightness(1.2) drop-shadow(0 0 12px rgba(255, 0, 0, 0.7));
+    filter: brightness(1.2);
 }
 
 /* Hamburger Menu */
@@ -48,7 +47,7 @@ header {
 .hamburger span {
     width: 100%;
     height: 5px;
-    background: #ff0000;
+    background: #1a73e8;
     border-radius: 3px;
     transition: all 0.3s ease;
 }
@@ -75,7 +74,7 @@ header {
 }
 
 .nav-menu ul li a {
-    color: #cccccc;
+    color: #c0c0c0;
     text-decoration: none;
     font-size: 1.2em;
     font-weight: 600;
@@ -85,14 +84,14 @@ header {
 }
 
 .nav-menu ul li a:hover {
-    color: #ff0000;
-    text-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
+    color: #1a73e8;
+    text-shadow: 0 0 10px rgba(26, 115, 232, 0.7);
 }
 
 .nav-menu ul li.active a {
-    color: #ff0000;
+    color: #1a73e8;
     font-weight: 700;
-    text-shadow: 0 0 8px rgba(255, 0, 0, 0.8);
+    text-shadow: 0 0 8px rgba(26, 115, 232, 0.8);
 }
 
 /* Hide login menu item on desktop */
@@ -104,34 +103,33 @@ header {
 .login-btn {
     display: flex;
     align-items: center;
-    background: linear-gradient(90deg, #ff0000, #ff3333);
+    background: linear-gradient(90deg, #1a73e8, #4a90e2);
     border: none;
     padding: 14px 28px;
     border-radius: 50px;
-    color: #ffffff;
+    color: white;
     font-size: 1.2em;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 3px 10px rgba(255, 0, 0, 0.5);
+    box-shadow: 0 3px 10px rgba(26, 115, 232, 0.5);
 }
 
 .login-btn:hover {
-    background: linear-gradient(90deg, #ff3333, #ff0000);
+    background: linear-gradient(90deg, #4a90e2, #1a73e8);
     transform: translateY(-3px);
-    box-shadow: 0 6px 15px rgba(255, 0, 0, 0.7);
+    box-shadow: 0 6px 15px rgba(26, 115, 232, 0.7);
 }
 
 .login-btn:active {
     transform: translateY(0);
-    box-shadow: 0 3px 10px rgba(255, 0, 0, 0.5);
+    box-shadow: 0 3px 10px rgba(26, 115, 232, 0.5);
 }
 
 .login-icon {
     width: 24px;
     height: 24px;
     margin-right: 12px;
-    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5));
 }
 
 .login-text {
@@ -155,9 +153,9 @@ header {
 
 .chat-list-container h2 {
     font-size: 3.2em;
-    color: #ff0000;
+    color: #1a73e8;
     margin: 0 0 50px;
-    text-shadow: 0 0 15px rgba(255, 0, 0, 0.7);
+    text-shadow: 0 0 15px rgba(26, 115, 232, 0.7);
     font-weight: 800;
     text-align: center;
     letter-spacing: 1.2px;
@@ -166,23 +164,49 @@ header {
 
 .chat-list-items {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: 1fr; /* Changed to single column for full-width items */
     gap: 30px;
     justify-items: center;
 }
 
 .chat-item {
-    background: linear-gradient(145deg, rgba(30, 30, 30, 0.95), rgba(20, 20, 20, 0.85));
+    background: linear-gradient(145deg, rgba(30, 40, 60, 0.95), rgba(20, 30, 50, 0.85));
     border-radius: 16px;
     padding: 30px;
     text-decoration: none;
     color: inherit;
     transition: all 0.4s ease;
     width: 100%;
-    box-shadow: 0 8px 20px rgba(255, 0, 0, 0.3);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
     position: relative;
     overflow: hidden;
-    border: 2px solid rgba(255, 0, 0, 0.3);
+    border: 2px solid rgba(26, 115, 232, 0.3);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Background images for chat items */
+.chat-item:nth-child(1) {
+    background-image: url('https://i.pinimg.com/474x/7e/4d/32/7e4d32670b1c82c23820e96c6070a39f.jpg');
+}
+.chat-item:nth-child(2) {
+    background-image: url('https://i.pinimg.com/736x/44/da/a6/44daa6dd16148062fab11d15b5a0f67d.jpg');
+}
+.chat-item:nth-child(3) {
+    background-image: url('https://cdn.pfps.gg/banners/5783-zero-two.png');
+}
+
+/* Overlay to ensure text readability */
+.chat-item::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(145deg, rgba(30, 40, 60, 0.7), rgba(20, 30, 50, 0.5));
+    z-index: 0;
 }
 
 .chat-item::before {
@@ -192,7 +216,7 @@ header {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 0, 0, 0.4), transparent);
+    background: linear-gradient(90deg, transparent, rgba(26, 115, 232, 0.4), transparent);
     transition: left 0.5s ease;
     z-index: 1;
 }
@@ -203,12 +227,12 @@ header {
 
 .chat-item:hover {
     transform: translateY(-5px) scale(1.02);
-    box-shadow: 0 10px 25px rgba(255, 0, 0, 0.6);
+    box-shadow: 0 10px 25px rgba(26, 115, 232, 0.6);
 }
 
 .chat-item:active {
     transform: translateY(0);
-    box-shadow: 0 4px 12px rgba(255, 0, 0, 0.3);
+    box-shadow: 0 4px 12px rgba(26, 115, 232, 0.3);
 }
 
 .chat-item h3,
@@ -223,12 +247,11 @@ header {
     color: #ffffff;
     font-weight: 700;
     letter-spacing: 0.8px;
-    text-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
 }
 
 .chat-item p {
     font-size: 1.2em;
-    color: #cccccc;
+    color: #d8d8d8;
     margin: 0;
     line-height: 1.5;
 }
@@ -250,7 +273,7 @@ header {
     animation-delay: calc(var(--index) * 0.15s);
 }
 
-/* Responsive Design */
+/* Responsive design */
 @media (max-width: 768px) {
     header {
         flex-wrap: wrap;
@@ -273,7 +296,6 @@ header {
         padding: 25px 0;
         order: 3;
         z-index: 10;
-        box-shadow: 0 0 15px rgba(255, 0, 0, 0.3);
     }
 
     .nav-menu.active {
@@ -295,8 +317,8 @@ header {
     }
 
     .login-menu-item a {
-        color: #ff0000 !important;
-        text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+        color: #1a73e8 !important;
+        font-weight: bold;
     }
 
     .hamburger {
@@ -334,14 +356,6 @@ header {
 }
 
 @media (max-width: 480px) {
-    header {
-        padding: 10px;
-    }
-
-    .logo img {
-        height: 50px;
-    }
-
     .chat-list-container {
         padding: 15px;
     }
@@ -352,13 +366,5 @@ header {
 
     .chat-item {
         padding: 20px;
-    }
-
-    .chat-item h3 {
-        font-size: 1.4em;
-    }
-
-    .chat-item p {
-        font-size: 0.9em;
     }
 }
