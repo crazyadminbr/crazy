@@ -94,6 +94,28 @@
         .login-btn.active {
             background: linear-gradient(90deg, #4a90e2, #1a73e8);
         }
+        /* Инструкция */
+        .start-instruction {
+            text-align: center;
+            margin: 20px 0;
+            color: #b0b0b0;
+            font-size: 1.2em;
+            line-height: 1.6;
+        }
+        .add-chat-btn {
+            display: inline-block;
+            margin: 10px auto;
+            padding: 12px 25px;
+            background: linear-gradient(90deg, #1a73e8, #4a90e2);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-size: 1.1em;
+            transition: all 0.3s ease;
+        }
+        .add-chat-btn:hover {
+            background: linear-gradient(90deg, #4a90e2, #1a73e8);
+        }
         /* FAQ */
         .faq-container {
             width: 90%;
@@ -205,6 +227,14 @@
             .faq-answer {
                 font-size: 1em;
             }
+            .start-instruction {
+                font-size: 1em;
+                padding: 0 15px;
+            }
+            .add-chat-btn {
+                font-size: 1em;
+                padding: 10px 20px;
+            }
         }
     </style>
 </head>
@@ -237,6 +267,11 @@
 
     <div class="faq-container">
         <h1>Часто Задаваемые Вопросы о Командах</h1>
+        <div class="start-instruction">
+            Чтобы начать пользоваться ботом, нажмите на кнопку <strong>/start</strong>, после нажатия добавьте в группу, и бот готов к вашему использованию!
+            <br>
+            <a href="https://t.me/YourBotUsername" class="add-chat-btn">+ Добавить в чат</a>
+        </div>
         <ul class="faq-list">
             <li class="faq-item">
                 <div class="faq-question">Как начать с /start?</div>
@@ -285,8 +320,3 @@
     </script>
 </body>
 </html>
-
-
-
-
-
